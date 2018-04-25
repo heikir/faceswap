@@ -1,11 +1,14 @@
 import cv2
 import numpy
 import time
+import os
 
 import threading 
 from lib.utils import get_image_paths, get_folder
 from lib.cli import FullPaths, argparse, os, sys
 from plugins.PluginLoader import PluginLoader
+
+os.environ["CUDA_VISIBLE_DEVICES"] = os.environ['SGE_GPU']
 
 tf = None
 set_session = None
